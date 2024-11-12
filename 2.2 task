@@ -1,0 +1,7 @@
+SQL Query
+
+
+SELECT pos.title, ARRAY_AGG(reports.barcode), ARRAY_AGG(reports.price)
+FROM pos
+JOIN reports ON pos.id = reports.pos_id
+GROUP BY pos.title;
